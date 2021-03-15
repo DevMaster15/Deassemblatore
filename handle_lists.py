@@ -26,7 +26,7 @@ def read_list_from_file():
             counter += 1
 
             if counter > 3:
-                list_instruction = aggiusta_lista(list_instruction)
+                list_instruction = exclude_usless(list_instruction)
                 final_list.append(list_instruction)
                 list_instruction = []
                 counter = 0
@@ -35,8 +35,8 @@ def read_list_from_file():
 
     return final_list
 
-
-def aggiusta_lista(byte_list):
+# method that excludes useless elements if there are 'zero' or 'incr' or 'proj' function
+def exclude_usless(byte_list):
 
     if byte_list[0] == 0 or byte_list[0] == 1:
         byte_list = byte_list[:2]
